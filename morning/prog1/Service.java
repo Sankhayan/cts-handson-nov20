@@ -1,4 +1,4 @@
-package morning.prog1;
+package prog1;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,10 +1,10 @@
-package morning.prog2;
+package prog2;
 
 import java.util.*;
 
 public class Bank {
 
-	public static void main(String args[]) throws java.io.IOException {
+	public static void main(String args[]) throws java.io.IOException, AccountNotFoundException {
 		int choice, an = 1;
 		List<AccountModel> list = new ArrayList<AccountModel>();
 		try (Scanner sc = new Scanner(System.in)) {
@@ -34,25 +34,31 @@ public class Bank {
 					break;
 				case 2:
 					System.out.println("enter Account No.: ");
-					int accountNo1 = sc.nextInt();
+					int accountNo1 = sc.nextInt(), c1 = 0;
 					Iterator<AccountModel> itr = list.iterator(); 
 			        while (itr.hasNext()) 
 			        { 
 			            AccountModel a = itr.next(); 
 			            if (a.getAccountNo() == accountNo1) 
-			                itr.remove(); 
+			                itr.remove(); c1++;
 			        } 
-					System.out.println("Account removed");
+			        if(c1 > 0)
+			        	System.out.println("Account removed");
+			        else
+			        	throw new AccountNotFoundException("No such account found. Deletion did not occur.");
 					break;
 				case 3:
 					System.out.println("enter Account No.: ");
-					int accountNo2 = sc.nextInt();
+					int accountNo2 = sc.nextInt(), c2 = 0;
 					AccountModel am = null;
 					for(AccountModel a : list) {
 						if(accountNo2 == a.getAccountNo())
-							am = a;
+							am = a; c2++;
 					}
-					System.out.println(am.toString());
+					if(c2 > 0)
+						System.out.println(am.toString());
+					else
+						throw new AccountNotFoundException("No such account found to be displayed.");
 					break;
 				case 4:
 					for(AccountModel a : list) {

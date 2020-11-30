@@ -1,4 +1,4 @@
-package morning.prog1;
+package prog1;
 
 public class User {
 	private int id;

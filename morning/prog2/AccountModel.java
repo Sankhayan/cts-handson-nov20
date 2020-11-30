@@ -1,4 +1,4 @@
-package morning.prog2;
+package prog2;
 
 public class AccountModel {
 	private int accountNo;
