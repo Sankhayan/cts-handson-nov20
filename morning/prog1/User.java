@@ -1,4 +1,4 @@
-package com.org.model;
+package morning.prog1;
 
 public class User {
 	private int id;

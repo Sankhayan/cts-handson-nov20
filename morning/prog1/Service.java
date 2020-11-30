@@ -1,9 +1,7 @@
-package com.org.service;
+package morning.prog1;
 
 import java.util.Arrays;
 import java.util.List;
-
-import com.org.model.User;
 
 public class Service {
 
